@@ -1,0 +1,97 @@
+@use "../../scss/" as *;
+
+.navbar {
+        position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 0.5rem 6rem 0.5rem 6rem;
+    background-color: transparent;
+    transition: width .5s, background-color .5s;
+    &__logo {
+        margin-right: 16px;
+        img {
+            width: 120px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        padding-top: 0.25rem;
+        a {
+            padding: 4px 8px;
+        }
+
+        a:hover {
+            color: $main-color;
+        }
+    }
+
+    &__search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9999px;
+        max-width: 420px;
+        width: 100%;
+        position: relative;
+        // background-color: #353535;
+        transition: width .3s, background-color .3s;
+
+        input {
+            width: 320px;
+            background-color: transparent;
+            // border-radius: 9999px;
+            padding: 8px 0 8px 16px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            outline: 0px;
+            border: 0px;
+            caret-color: $white;
+            color: $white;
+        }
+
+        input::placeholder {
+            color:#9CA3AF;
+        }
+
+        &__btn {
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__user {
+        margin-left: 1.25rem;
+        img {
+            width: 50px;
+            // height: 40px;
+            border-radius: 50px;
+        }
+    }
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.active {
+    background-color: #1B1B1B;
+    opacity: 0.9;
+}

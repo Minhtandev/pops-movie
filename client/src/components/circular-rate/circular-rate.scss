@@ -1,0 +1,5 @@
+@use "../../scss/" as *;
+
+.circular-rate {
+    transform: scale(0.65) translateX(-20%);
+}

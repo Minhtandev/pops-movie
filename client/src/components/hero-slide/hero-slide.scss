@@ -1,0 +1,109 @@
+@use "../../scss/" as *;
+
+.hero-slide {
+    position: relative;
+    color: $white;
+    .bg-img__container {
+        padding-top: 45%;
+        background-position: top;
+        background-size: cover;
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 10rem;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 30%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+            
+        }
+        
+        &__container {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 30px;
+            color: $txt-color;
+
+                    .hero-slide__content__title {
+                        margin: 0;
+                            font-size: 4rem;
+                            font-weight: 700;
+                            text-align: left;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                        }
+                    
+                        .hero-slide__content__tags {
+                            margin: 32px 0 0 0;
+                            display:flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    
+                        .hero-slide__content__description {
+                            margin: 32px 0 0 0;
+                            text-align: justify;
+                            display: -webkit-box;
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            line-height: 1.5;
+                        }
+                    
+                        button {
+                            margin: 32px 0 0 0;
+                            padding: 12px 32px;
+                            // background-color: $main-color;
+                            background-image: $gradient-horizontal;
+                            outline: 0px;
+                            border: 0px;
+                            font-size: 20px;
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            &:hover {
+                                box-shadow: 0 0 14px -1px $main-color;
+                                background-position: 100%;
+                            }
+
+                            svg {
+                                margin-right: 8px;
+                                width: 24px;
+                                height: 24px;
+                                fill: $white;
+                            }
+                        }
+        }
+
+
+    }
+
+}
