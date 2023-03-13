@@ -1,9 +1,13 @@
 @use "../../scss/" as *;
+.movie-slide {
+    padding-top: 30px;
+}
 
 .movie-slide__title {
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 25px;
+    text-transform: capitalize;
     &::before {
         content: '';
         display: inline-block;
@@ -23,7 +27,6 @@
         background-size: cover;
         background-position: center center;
         background-color: darkgrey;
-        background-image: url(https://image.tmdb.org/t/p/w500/kuf6dutpsT0vSVehic3EZIqkOBt.jpg);
         padding-top: 160%;
         color: rgb(255, 255, 255);
 

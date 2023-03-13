@@ -2,4 +2,16 @@
 
 .auto-swiper .swiper-slide {
     width: 20.5%;
+
+    @include tablet {
+        width: 25%;
+    }
+
+    @include mobile {
+        width: 35%;
+    }
+
+    @include small-mobile {
+        width: 50%;
+    }
 }

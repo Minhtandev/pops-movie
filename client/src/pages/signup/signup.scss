@@ -1,0 +1,31 @@
+@use "../../scss/" as *;
+
+.signup {
+    background-image: url('https://cdn.popsww.com/popsapp/assets/images/desktop/signin-signup/bg@3x_tiny.jpg');
+    height: 100vh;
+    min-height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    position: relative;
+
+    .logo {
+        width: 120px;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+    }
+}
+
+.signup:before {
+    content: "";
+    background: #141414;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    opacity: .9;
+}

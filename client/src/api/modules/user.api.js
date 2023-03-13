@@ -2,17 +2,23 @@ import privateClient from "../client/privateClient";
 import publicClient from "../client/publicClient";
 
 const userEndpoints = {
-  signin: "user/signin",
+  login: "user/login",
   signup: "user/signup",
   getInfo: "user/info",
   passwordUpdate: "user/update-password",
 };
 
 const userApi = {
-  signin: async ({ username, password }) => {
+  login: async ({ username, password }) => {
     try {
-      console.log("send request");
-      const response = await publicClient.post(userEndpoints.signin, {
+      console.log(
+        "send request>>>",
+        "username",
+        username,
+        "password",
+        password
+      );
+      const response = await publicClient.post(userEndpoints.login, {
         username,
         password,
       });

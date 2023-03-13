@@ -1,0 +1,79 @@
+@use "../../scss/" as *;
+
+.form {
+    width: 520px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #242424;
+    padding: 50px 70px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.69);
+    z-index: 10;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        text-align: center;
+        margin-bottom: 1.75rem;
+        font-size: 18px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            height: 44px;
+            background-color: #353434 !important; 
+            border-radius: 0.25rem;
+            color: #fff;
+            min-height: 20px;
+            border: 1px solid #353434;
+            padding-left: 0.875rem;
+            padding-right: 0.875rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            margin-bottom: 1rem;
+            caret-color: #ea6016;
+            position: relative;
+        }
+
+        input:focus {
+            border-color: #ea6016;
+        }
+    
+        input[type="submit"] {
+            background: #929292;
+                color: #fff;
+                cursor: auto;
+                    border-radius: .375rem;
+                    font-size: 1rem;
+                        line-height: 1.5rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        outline: 2px solid transparent;
+                        outline-offset: 2px;
+                        width: 100%;
+                        height: 44px;
+                        margin-bottom: 1rem;
+                        display: block;
+                        border: none;
+        }
+
+        input[type="submit"]:hover {
+                box-shadow: 0 0 14px -1px #f80;
+        }
+    }
+}

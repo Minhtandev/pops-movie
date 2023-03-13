@@ -1,0 +1,64 @@
+@use "../../scss/" as *;
+
+.search-page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+    @include tablet {
+        padding-top: 80px;
+    }
+    &__btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        button{
+            margin: 0 10px;
+        }
+    }
+
+    &__results {
+        position: relative;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        @include tablet {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @include mobile {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            a {
+                width: 25%;
+                padding: 5px;
+
+                @include tablet {
+                    width: calc(100%/3);
+                }
+
+                @include mobile {
+                    width: 50%;
+                }
+
+                .movie-item {
+                        width: 100%;
+                        // padding-top: 100px;
+                    }
+            }
+        }
+    }
+
+
+
+}

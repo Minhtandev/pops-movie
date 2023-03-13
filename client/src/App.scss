@@ -9,17 +9,17 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    font-size: 100%;
+// html {
+//     font-size: 100%;
 
-    @include tablet {
-        font-size: 80%;
-    }
+//     @include tablet {
+//         font-size: 80%;
+//     }
 
-    @include mobile {
-        font-size: 60%;
-    }
-}
+//     @include mobile {
+//         font-size: 60%;
+//     }
+// }
 
 body {
     font-family: $font-family;
@@ -29,9 +29,9 @@ body {
     background-color: $body-bg;
     color: $txt-color;
 
-    @include mobile {
-        margin-bottom: 3rem;
-    }
+    // @include mobile {
+    //     margin-bottom: 3rem;
+    // }
 }
 
 a {
@@ -42,6 +42,10 @@ a {
 @media (hover: hover) {
     a:hover {
         color: $main-color;
+    }
+
+    button a:hover {
+        color: #fff;
     }
 }
 
