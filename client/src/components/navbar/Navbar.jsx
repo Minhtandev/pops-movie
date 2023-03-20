@@ -4,6 +4,7 @@ import logo from "../../assets/logo-pops.png";
 import userIcon from "../../assets/user.webp";
 import { useNavigate } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   const inputEl = useRef(null);
@@ -36,9 +37,9 @@ const Navbar = () => {
           <img src={logo} alt="" />
         </div>
         <div className="navbar__content">
-          <a href="#">Home</a>
-          <a href="#">Movie</a>
-          <a href="#">TV series</a>
+          <Link to="/">Home</Link>
+          <Link to="/movie">Movie</Link>
+          <Link to="/tv">TV series</Link>
         </div>
       </div>
       <div className="right">

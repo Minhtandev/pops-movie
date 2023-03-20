@@ -1,6 +1,6 @@
 import React from "react";
 import "./login.scss";
-import Form from "../../components/form/Form";
+import LoginForm from "../../components/login-form/LoginForm";
 import logo from "../../assets/logo-pops.png";
 const Login = () => {
   return (
@@ -8,7 +8,7 @@ const Login = () => {
       <div className="logo">
         <img src={logo} alt="" />
       </div>
-      <Form type="login" />
+      <LoginForm />
     </div>
   );
 };

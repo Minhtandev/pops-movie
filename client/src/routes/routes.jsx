@@ -10,6 +10,7 @@ import ProtectedPage from "../components/ProtectedPage";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import NotFound from "../components/not-found/NotFound";
+import MovieList from "../pages/movie-list/MovieList";
 
 export const routesGen = {
   home: "/",
@@ -38,16 +39,16 @@ const routes = [
     element: <Search />,
     state: "search",
   },
-  {
-    path: "/login",
-    element: <Login />,
-    state: "login",
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-    state: "signup ",
-  },
+  // {
+  //   path: "/login",
+  //   element: <Login />,
+  //   state: "login",
+  // },
+  // {
+  //   path: "/signup",
+  //   element: <Signup />,
+  //   state: "signup ",
+  // },
   // {
   //   path: "/password-update",
   //   element: (
@@ -75,18 +76,22 @@ const routes = [
   //   ),
   //   state: "reviews"
   // },
-  // {
-  //   path: "/:mediaType",
-  //   element: <MediaList />
-  // },
+  {
+    path: "/tv",
+    element: <MovieList mediaType="tv" />,
+  },
+  {
+    path: "/movie",
+    element: <MovieList mediaType="movie" />,
+  },
   {
     path: "/:mediaType/:mediaId",
     element: <MediaDetail />,
   },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
+  // {
+  //   path: "*",
+  //   element: <NotFound />,
+  // },
 ];
 
 export default routes;

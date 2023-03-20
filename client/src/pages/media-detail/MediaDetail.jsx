@@ -8,51 +8,42 @@ import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import MovieSlide from "../../components/movie-slide/MovieSlide";
 import tmdbConfigs from "../../api/configs/tmdb.configs.js";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-
-const VideosSlide = ({}) => {
-  return <div className="videos-slide"></div>;
-};
-
-const BackdropSlide = ({}) => {
-  return <div className="backdrops-slide"></div>;
-};
-
-const PosterSlide = ({}) => {
-  return <div className="posters-slide"></div>;
-};
-
-const RecommendSlide = ({}) => {
-  return (
-    <div className="recommend-slide">
-      <MovieSlide />
-    </div>
-  );
-};
+// import Navbar from "../../components/navbar/Navbar";
+// import Footer from "../../components/footer/Footer";
+import { toast } from "react-toastify";
+import {
+  VideoSlide,
+  PosterSlide,
+  BackdropSlide,
+} from "../../components/media-slide/MediaSlide";
+import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
   const [media, setMedia] = useState({});
-
+  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
     const getMedia = async () => {
+      dispatch(setGlobalLoading(true));
       const { response, err } = await mediaApi.getDetail({
         mediaType,
         mediaId,
       });
 
       if (response) {
-        console.log(response);
+        // console.log(response);
         setMedia(response);
       }
+      if (err) toast.error(err.message);
+      dispatch(setGlobalLoading(false));
     };
     getMedia();
   }, [mediaType, mediaId]);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="media-detail">
         <div
           className="img-header"
@@ -92,12 +83,27 @@ const MediaDetail = () => {
             </Button>
           </div>
         </div>
-        <VideosSlide />
-        <BackdropSlide />
-        <PosterSlide />
-        <RecommendSlide />
+        <div className="slide-container">
+          {media.videos && media.videos.results.length > 0 && (
+            <VideoSlide
+              mediaArr={
+                media.videos ? [...media.videos.results].splice(0, 5) : []
+              }
+            />
+          )}
+          {media.images && media.images.posters && (
+            <PosterSlide mediaArr={media.images ? media.images.posters : []} />
+          )}
+          {media.images && media.images.backdrops && (
+            <BackdropSlide
+              mediaArr={media.images ? media.images.backdrops : []}
+            />
+          )}
+          <MovieSlide recommendations={media?.recommend} />
+          <MovieSlide />
+        </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

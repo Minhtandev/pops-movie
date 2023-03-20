@@ -10,8 +10,14 @@ import { useNavigate } from "react-router-dom";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import genreApi from "../../api/modules/genre.api";
 import mediaApi from "../../api/modules/media.api";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
+
 // import PlayArrowIcon from "@mui/icons-material/PlayArrow";s
 const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
+  const dispatch = useDispatch();
+
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const navigate = useNavigate();
@@ -25,19 +31,27 @@ const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
       });
 
       if (response) setMovies(response.results);
+      if (err) toast.error(err.message);
+      dispatch(setGlobalLoading(false));
     };
 
     const getGenres = async () => {
+      dispatch(setGlobalLoading(true));
       const { response, err } = await genreApi.getList({ mediaType });
 
       if (response) {
         setGenres(response.genres);
         getMedias();
       }
+
+      if (err) {
+        toast.error(err.message);
+        setGlobalLoading(false);
+      }
     };
 
     getGenres();
-  }, [mediaType, mediaCategory]);
+  }, [mediaType, mediaCategory, dispatch]);
 
   return (
     <div className="hero-slide">

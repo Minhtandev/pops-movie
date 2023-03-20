@@ -9,6 +9,9 @@ import "swiper/css/pagination";
 import HeroSlide from "./components/hero-slide/HeroSlide";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import NotFound from "./components/not-found/NotFound";
 function App() {
   return (
     <div className="App">
@@ -49,11 +52,23 @@ function App() {
               )
             )}
           </Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
       {/* app routes */}
 
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        pauseOnHover
+        // theme={themeMode}
+      />
     </div>
   );
 }

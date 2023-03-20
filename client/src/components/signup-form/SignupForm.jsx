@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import "./form.scss";
-import { useFormik } from "formik";
+import "./signup-form.scss";
+import { useFormik, ErrorMessage } from "formik";
 import userApi from "../../api/modules/user.api";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-const Form = ({ type = "login" }) => {
-  const [errorMessage, setErrorMessage] = useState();
+const SignupForm = ({ type = "login" }) => {
+  const [loginUsernameErr, setLoginUsernameErr] = useState("");
+  const [loginPasswordErr, setLoginPasswordErr] = useState("");
+  const [signupUsernameErr, setSignupUsernameErr] = useState("");
+  const [signupDisplaynameErr, sétignupDisplaynameErr] = useState("");
+  const [signupPasswordErr, setSignupPasswordErr] = useState("");
+  const [signupConfirmedPassErr, setSignupConfirmedPassErr] = useState("");
   const navigate = useNavigate();
 
   const login = useFormik({
@@ -27,10 +32,10 @@ const Form = ({ type = "login" }) => {
       if (response) {
         console.log("results>>>", response);
         login.resetForm();
-        toast.success("success");
+        toast.success("Login successfully!!!");
         navigate("/");
       }
-      if (err) setErrorMessage(err.message);
+      // if (err) setErrorMessage(err.message);
     },
   });
 
@@ -60,14 +65,16 @@ const Form = ({ type = "login" }) => {
       const { response, err } = await userApi.signup(values);
       if (response) {
         signup.resetForm();
+        toast.success("Signup successfully!!!");
+        navigate("/");
       }
-      if (err) setErrorMessage(err.message);
+      // if (err) setErrorMessage(err.message);
     },
   });
 
   return (
     <div className="form">
-      <h2>Đăng nhập</h2>
+      <h2>{type == "login" ? "Đăng nhập" : "Đăng ký"}</h2>
       <h4>Bạn có thể đăng nhập với tài khoản POPS hoặc POPS Kids.</h4>
       {type == "login" ? (
         <form action="" onSubmit={login.handleSubmit}>
@@ -78,6 +85,7 @@ const Form = ({ type = "login" }) => {
             onChange={login.handleChange}
             value={login.values.username}
           />
+          <ErrorMessage name="username" />
           <input
             type="password"
             name="password"
@@ -120,9 +128,9 @@ const Form = ({ type = "login" }) => {
           <input type="submit" value="Đăng ký" />
         </form>
       )}
-      {errorMessage && <p>{errorMessage}</p>}
+      {/* {errorMessage && <p>{errorMessage}</p>} */}
     </div>
   );
 };
 
-export default Form;
+export default SignupForm;

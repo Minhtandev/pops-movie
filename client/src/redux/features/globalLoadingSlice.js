@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const globalLoadingSlice = createSlice({
-  name: "AuthModal",
+  name: "GlobalLoading",
   initialState: {
     globalLoading: false,
   },

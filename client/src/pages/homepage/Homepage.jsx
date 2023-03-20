@@ -8,7 +8,7 @@ import Footer from "../../components/footer/Footer";
 const Homepage = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <LazyLoad height={200}>
         <HeroSlide />
         <div className="container">
@@ -18,7 +18,7 @@ const Homepage = () => {
           <MovieSlide mediaType="tv" mediaCategory="top_rated" />
         </div>
       </LazyLoad>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -1,0 +1,161 @@
+@use "../../scss/" as *;
+
+.movie-list {
+    &__content {
+        position: relative;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        @include tablet {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @include mobile {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            margin-bottom: 1rem;
+            .title {
+                margin: 0px;
+                font-family: Roboto, Helvetica, Arial, sans-serif;
+                font-size: 1.5rem;
+                line-height: 1.334;
+                letter-spacing: 0em;
+                font-weight: 700;
+            }
+
+            .btns__container {
+                display: flex;
+                button {
+                    text-transform: uppercase;
+                    margin-left: 10px;
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    border-radius: 5px;
+                    width: 120px;
+                    transition: color 0.5s, background-position 0.3s, box-shadow 0.3s;
+                    font-weight: 700;
+                    text-align: center;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    border-style: solid;
+                    border-width: 1px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-color: #ea6016;
+                    background: rgba(53, 52, 52, 0.5);
+                    color: #ea6016;
+
+                    // border-color: #ea6016;
+                    // background: #ea6016;
+                    // color: #fff;
+
+                    &:hover {
+                        box-shadow: 0 0 14px -1px $main-color;
+                        background-position: 100%;
+                    }
+
+                    &:first-child {
+                        border-color: #ea6016;
+                        background: #ea6016;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            a {
+                width: 25%;
+                padding: 5px;
+
+                @include tablet {
+                    width: calc(100% / 3);
+                }
+
+                @include mobile {
+                    width: 50%;
+                }
+
+                .movie-item {
+                    width: 100%;
+                    // padding-top: 100px;
+                }
+            }
+        }
+
+        .loadmore {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                border-radius: 5px;
+                width: 150px;
+                transition: color 0.5s, background-position 0.3s, box-shadow 0.3s;
+                font-weight: 700;
+                text-align: center;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                border-style: solid;
+                border-width: 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-color: #ea6016;
+                background: rgba(53, 52, 52, 0.5);
+                color: #ea6016;
+                margin-right: 0.5rem;
+
+                svg {
+                    transform: scale(1.25);
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .move-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 100px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            background: transparent;
+            button {
+                width: 50px;
+                height: 60px;
+                border-radius: 20px;
+                border-color: #ea6016;
+                background: rgba(53, 52, 52, 0.5);
+                svg {
+                    transform: scale(1.25);
+                    fill: #ea6016;
+                }
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
