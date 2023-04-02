@@ -13,6 +13,7 @@ import mediaApi from "../../api/modules/media.api";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
+import { Autoplay } from "swiper";
 
 // import PlayArrowIcon from "@mui/icons-material/PlayArrow";s
 const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
@@ -56,8 +57,14 @@ const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
   return (
     <div className="hero-slide">
       <Swiper
+        // modules={[Autoplay]}
         grabCursor={true}
         loop={true}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        //   // pauseOnMouseEnter: true,
+        // }}
         style={{ width: "100%", height: "max-content" }}>
         {movies.map((item, index) => (
           <SwiperSlide key={index}>

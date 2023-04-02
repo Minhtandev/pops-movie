@@ -1,11 +1,11 @@
 import Homepage from "../pages/homepage/Homepage";
 // import PersonDetail from "../pages/PersonDetail";
-// import FavoriteList from "../pages/FavoriteList";
+import FavouriteList from "../pages/favorites/FavouriteList";
 import MediaDetail from "../pages/media-detail/MediaDetail";
 // import MediaList from "../pages/MediaList";
 import Search from "../pages/search/Search";
 // import PasswordUpdate from "../pages/PasswordUpdate";
-// import ReviewList from "../pages/ReviewList";
+import ReviewList from "../pages/reviews/ReviewList";
 import ProtectedPage from "../components/ProtectedPage";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
@@ -58,24 +58,24 @@ const routes = [
   //   ),
   //   state: "password.update"
   // },
-  // {
-  //   path: "/favorites",
-  //   element: (
-  //     <ProtectedPage>
-  //       <FavoriteList />
-  //     </ProtectedPage>
-  //   ),
-  //   state: "favorites"
-  // },
-  // {
-  //   path: "/reviews",
-  //   element: (
-  //     <ProtectedPage>
-  //       <ReviewList />
-  //     </ProtectedPage>
-  //   ),
-  //   state: "reviews"
-  // },
+  {
+    path: "/favourites",
+    element: (
+      <ProtectedPage>
+        <FavouriteList />
+      </ProtectedPage>
+    ),
+    state: "favorites",
+  },
+  {
+    path: "/reviews",
+    element: (
+      <ProtectedPage>
+        <ReviewList />
+      </ProtectedPage>
+    ),
+    state: "reviews",
+  },
   {
     path: "/tv",
     element: <MovieList mediaType="tv" />,

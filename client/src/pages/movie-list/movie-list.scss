@@ -98,64 +98,64 @@
                 }
             }
         }
+    }
+}
 
-        .loadmore {
-            width: 100%;
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            button {
-                font-size: 0.875rem;
-                line-height: 1.25rem;
-                border-radius: 5px;
-                width: 150px;
-                transition: color 0.5s, background-position 0.3s, box-shadow 0.3s;
-                font-weight: 700;
-                text-align: center;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-                padding-left: 1rem;
-                padding-right: 1rem;
-                border-style: solid;
-                border-width: 1px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-color: #ea6016;
-                background: rgba(53, 52, 52, 0.5);
-                color: #ea6016;
-                margin-right: 0.5rem;
+.loadmore {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        border-radius: 5px;
+        width: 150px;
+        transition: color 0.5s, background-position 0.3s, box-shadow 0.3s;
+        font-weight: 700;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-style: solid;
+        border-width: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: #ea6016;
+        background: rgba(53, 52, 52, 0.5);
+        color: #ea6016;
+        margin-right: 0.5rem;
 
-                svg {
-                    transform: scale(1.25);
-                    margin-left: 5px;
-                }
-            }
+        svg {
+            transform: scale(1.25);
+            margin-left: 5px;
         }
+    }
+}
 
-        .move-to-top {
-            position: fixed;
-            right: 20px;
-            bottom: 100px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            background: transparent;
-            button {
-                width: 50px;
-                height: 60px;
-                border-radius: 20px;
-                border-color: #ea6016;
-                background: rgba(53, 52, 52, 0.5);
-                svg {
-                    transform: scale(1.25);
-                    fill: #ea6016;
-                }
-            }
-
-            &.active {
-                opacity: 1;
-            }
+.move-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    background: transparent;
+    button {
+        width: 50px;
+        height: 60px;
+        border-radius: 20px;
+        border-color: #ea6016;
+        background: rgba(53, 52, 52, 0.5);
+        svg {
+            transform: scale(1.25);
+            fill: #ea6016;
         }
+    }
+
+    &.active {
+        opacity: 1;
     }
 }

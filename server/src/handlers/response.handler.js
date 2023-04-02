@@ -1,5 +1,5 @@
 const responseWithData = (res, statusCode, data) => {
-  console.log("data", data);
+  // console.log("data", data);
   res.status(statusCode).json(data);
 };
 

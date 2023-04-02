@@ -93,28 +93,41 @@
                 letter-spacing: 0.00938em;
             }
 
-            button {
-                margin: 32px 0 0 0;
-                padding: 12px 32px;
-                // background-color: $main-color;
-                background-image: $gradient-horizontal;
-                outline: 0px;
-                border: 0px;
-                font-size: 20px;
+            .btns-container {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-
-                &:hover {
-                    box-shadow: 0 0 14px -1px $main-color;
-                    background-position: 100%;
+                margin: 32px 0 0 10px;
+                .favortie-btn {
+                    width: 40px;
+                    // height: 40px;
+                    svg {
+                        transform: scale(2.5);
+                    }
                 }
+                button {
+                    // margin: 32px 0 0 0;
+                    padding: 12px 32px;
+                    // background-color: $main-color;
+                    background-image: $gradient-horizontal;
+                    outline: 0px;
+                    border: 0px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                svg {
-                    margin-right: 8px;
-                    width: 24px;
-                    height: 24px;
-                    fill: $white;
+                    &:hover {
+                        box-shadow: 0 0 14px -1px $main-color;
+                        background-position: 100%;
+                    }
+
+                    svg {
+                        margin-right: 8px;
+                        width: 24px;
+                        height: 24px;
+                        fill: $white;
+                    }
                 }
             }
         }

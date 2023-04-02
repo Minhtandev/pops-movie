@@ -1,0 +1,112 @@
+@use "../../scss/" as *;
+
+.favourite {
+    // display: flex;
+    // flex-direction: column;
+    padding-top: 80px;
+
+    @include tablet {
+        padding-top: 100px;
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+        max-width: 1336px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include tablet {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @include mobile {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 36px;
+            margin-bottom: 25px;
+            text-transform: capitalize;
+            // margin-left: 20px;
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 50px;
+                width: 8px;
+                background: linear-gradient(
+                    180deg,
+                    var(--heading_custom_border_color_1, #f80),
+                    var(--heading_custom_border_color_2, #ea3c2a)
+                );
+                border-radius: 1rem;
+                top: 50%;
+                transform: translateY(25%);
+                left: 0;
+                margin-right: 15px;
+            }
+        }
+        .movie-grid {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+            width: 100%;
+            a {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.favourite-item {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px);
+    position: relative;
+    margin: 5px;
+    // padding: 5px;
+
+    @include tablet {
+        width: calc(100% / 3 - 10px);
+    }
+
+    @include mobile {
+        width: calc(50% - 10px);
+    }
+
+    .movie-item {
+        width: 100%;
+        // padding-top: 100px;
+    }
+
+    .loading-btn {
+        width: 100%;
+        height: unset;
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        button {
+            width: 100%;
+            display: inline-block;
+            background-color: $main-color;
+            color: #fff;
+            font-weight: 700;
+            padding: 5px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+
+            &:hover {
+                box-shadow: 0 0 14px -1px $main-color;
+                background-position: 100%;
+            }
+        }
+    }
+}

@@ -19,8 +19,8 @@ const signup = async (req, res) => {
 
     await user.save();
 
-    console.log("user >>>", username, password, displayName);
-    console.log("process.env.TOKEN_SECRET_KEY", process.env.TOKEN_SECRET_KEY);
+    // console.log("user >>>", username, password, displayName);
+    // console.log("process.env.TOKEN_SECRET_KEY", process.env.TOKEN_SECRET_KEY);
     const token = jsonwebtoken.sign(
       { data: user.id },
       process.env.TOKEN_SECRET_KEY,
@@ -95,9 +95,7 @@ const updatePassword = async (req, res) => {
 const getInfo = async (req, res) => {
   try {
     const user = await userModel.findById(req.user.id);
-
     if (!user) return responseHandler.notfound(res);
-
     responseHandler.ok(res, user);
   } catch {
     responseHandler.error(res);
