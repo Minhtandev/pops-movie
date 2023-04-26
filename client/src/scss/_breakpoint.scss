@@ -1,16 +1,28 @@
 @use "./variables" as *;
 
-@mixin tiny-mobile {
-    @media only screen and (max-width: $tiny-mobile-width) {
-        @content;
-    }
-}
+// @mixin tiny-mobile {
+//     @media only screen and (max-width: $tiny-mobile-width) {
+//         @content;
+//     }
+// }
 
-@mixin small-mobile {
-    @media only screen and (max-width: $small-mobile-width) {
-        @content;
-    }
-}
+// @mixin small-mobile {
+//     @media only screen and (max-width: $small-mobile-width) {
+//         @content;
+//     }
+// }
+
+// @mixin mobile {
+//     @media only screen and (max-width: $mobile-width) {
+//         @content;
+//     }
+// }
+
+// @mixin tablet {
+//     @media only screen and (max-width: $tablet-width) {
+//         @content;
+//     }
+// }
 
 @mixin mobile {
     @media only screen and (max-width: $mobile-width) {

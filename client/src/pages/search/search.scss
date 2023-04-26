@@ -96,4 +96,14 @@
         background: #ea6016;
         color: #fff;
     }
+
+    .navbar__search-bar {
+        display: none;
+        @include mobile {
+            display: flex;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }

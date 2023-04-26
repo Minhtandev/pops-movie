@@ -9,19 +9,11 @@
         background-size: cover;
 
         @include tablet {
-            padding-top: 60%;
+            padding-top: 70%;
         }
 
         @include mobile {
-            padding-top: 80%;
-        }
-
-        @include small-mobile {
-            padding-top: 100%;
-        }
-
-        @include tiny-mobile {
-            padding-top: 120%;
+            padding-top: 180%;
         }
     }
 
@@ -43,7 +35,7 @@
         padding-left: 10rem;
 
         @include tablet {
-            padding-left: 5rem;
+            padding-left: 2rem;
         }
 
         @include mobile {
@@ -73,10 +65,6 @@
             color: $txt-color;
 
             @include tablet {
-                width: 40%;
-            }
-
-            @include mobile {
                 width: unset;
             }
 
@@ -100,6 +88,16 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                @include mobile {
+                    margin-left: -20px;
+                }
+
+                .circular-rate {
+                    @include mobile {
+                        transform: scale(0.55) translateX(-20%);
+                    }
+                }
             }
 
             .hero-slide__content__description {
@@ -126,6 +124,12 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                @include tablet {
+                    padding: 5px 12px;
+                    font-size: 16px;
+                    margin-top: 2px;
+                }
 
                 &:hover {
                     box-shadow: 0 0 14px -1px $main-color;

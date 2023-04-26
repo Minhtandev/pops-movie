@@ -164,7 +164,7 @@ const MediaDetail = () => {
             </div>
           </div>
         </div>
-        <div className="slide-container">
+        <div className="container">
           {media.videos && media.videos.results.length > 0 && (
             <VideoSlide
               mediaArr={

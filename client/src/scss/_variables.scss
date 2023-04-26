@@ -8,8 +8,8 @@ $black: #141414;
 $light-orange: rgb(255, 135, 0);
 $strong-orange: rgb(234, 60, 42);
 
-$gradient-horizontal: linear-gradient(to right, rgb(255,135,0), rgb(234,60,42));
-$gradient-vertical: linear-gradient(to bottom, rgb(255,135,0), rgb(234,60,42));
+$gradient-horizontal: linear-gradient(to right, rgb(255, 135, 0), rgb(234, 60, 42));
+$gradient-vertical: linear-gradient(to bottom, rgb(255, 135, 0), rgb(234, 60, 42));
 
 $lg-text: 36px;
 $md-text: 20px;
@@ -21,10 +21,7 @@ $header-height: 8rem;
 $header-shrink-height: 5rem;
 $border-radius: 30px;
 
-$tiny-mobile-width: 500px;
-$small-mobile-width: 700px;
-$mobile-width: 900px;
-// $tablet-width: 1024px;
-$tablet-width: 1200px;
+$mobile-width: 600px;
+$tablet-width: 1024px;
 
 $font-family: "Roboto", sans-serif;

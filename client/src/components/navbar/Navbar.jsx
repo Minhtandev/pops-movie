@@ -195,7 +195,7 @@ const Navbar = () => {
             </div>
           )}
         </div> */}
-        <FiMenu className="menu-icon" size="50px" />
+        {/* <FiMenu className="menu-icon" size="50px" /> */}
       </div>
     </div>
   );

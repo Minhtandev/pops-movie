@@ -8,6 +8,14 @@
     align-items: center;
     padding: 2rem;
 
+    @include mobile {
+        flex-direction: column;
+        padding: 10px;
+
+        img {
+            transform: scale(0.8);
+        }
+    }
     .left {
         img {
             width: 120px;
@@ -36,6 +44,14 @@
                     text-decoration: none;
                     background-color: rgba(230, 105, 34, 0.7);
                 }
+            }
+        }
+
+        @include mobile {
+            justify-content: center;
+
+            ul {
+                padding: 0;
             }
         }
     }
