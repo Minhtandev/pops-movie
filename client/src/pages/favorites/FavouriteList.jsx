@@ -15,6 +15,7 @@ import { removeFavorite } from "../../redux/features/userSlice";
 import LoadingButton from "../../components/loading-btn/LoadingButton";
 import { MovieItem } from "../../components/movie-slide/MovieSlide";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import CategoryTitle from "../../components/category-title/CategoryTitle";
 
 const FavouriteItem = ({ media, onRemoved }) => {
   const dispatch = useDispatch();
@@ -106,7 +107,7 @@ const FavouriteList = () => {
   return (
     <div className="favourite">
       <div className="content">
-        <div className="title">Your favourites</div>
+        <CategoryTitle text="Your favourites" />
         <div className="movie-grid">
           {filteredMedias.map((media, index) => (
             <FavouriteItem media={media} onRemoved={onRemoved} />

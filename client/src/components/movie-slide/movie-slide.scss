@@ -3,35 +3,6 @@
     padding-top: 30px;
 }
 
-.movie-slide__title {
-    font-weight: 700;
-    font-size: 36px;
-    margin-bottom: 25px;
-    text-transform: capitalize;
-
-    @include mobile {
-        transform: scale(0.7);
-        transform-origin: left;
-        width: 120%;
-    }
-    &::before {
-        content: "";
-        display: inline-block;
-        height: 50px;
-        width: 8px;
-        background: linear-gradient(
-            180deg,
-            var(--heading_custom_border_color_1, #f80),
-            var(--heading_custom_border_color_2, #ea3c2a)
-        );
-        border-radius: 1rem;
-        top: 50%;
-        transform: translateY(25%);
-        left: 0;
-        margin-right: 15px;
-    }
-}
-
 .movie-item {
     position: relative;
     background-size: cover;

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./signup.scss";
-import SignupForm from "../../components/signup-form/SignupForm";
 import logo from "../../assets/logo-pops.png";
 import userApi from "../../api/modules/user.api";
 import * as Yup from "yup";
@@ -36,7 +35,7 @@ const Signup = () => {
   // const labelEl = useRef(null);
   // let text = "Username";
   return (
-    <div className="signup">
+    <div className="login">
       <div className="logo">
         <img src={logo} alt="" />
       </div>

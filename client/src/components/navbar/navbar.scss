@@ -19,6 +19,8 @@
 
     @include mobile {
         padding: 0.25rem 1rem;
+        margin-left: -32px;
+        margin-right: -8px;
     }
 
     &__logo {
@@ -97,9 +99,11 @@
     }
 
     &__user {
-        margin-left: 1.25rem;
+        // margin-left: 1.25rem;
         width: 60px;
         position: relative;
+        display: flex;
+        justify-content: flex-end;
         cursor: pointer;
         img {
             width: 40px;
@@ -118,6 +122,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @include mobile {
+        margin-right: -32px;
+    }
 }
 
 .right {

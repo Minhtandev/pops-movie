@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import { routesGen } from "../../routes/routes";
 import { toast } from "react-toastify";
+import CategoryTitle from "../category-title/CategoryTitle";
 
 const MovieItem = ({ media, mediaType }) => {
   const [title, setTitle] = useState("");
@@ -90,11 +91,14 @@ const MovieSlide = ({
   }, [mediaType, mediaCategory]);
   return (
     <div className="movie-slide">
-      <h3 className="movie-slide__title">
-        {recommendations.length > 0
-          ? "you may also like"
-          : `${mediaCategory} ${mediaType == "movie" ? "movie" : "tv series"}`}
-      </h3>
+      <CategoryTitle
+        text={
+          recommendations.length > 0
+            ? "you may also like"
+            : `${mediaCategory} ${mediaType == "movie" ? "movie" : "tv series"}`
+        }
+      />
+
       <AutoSwiper>
         {mediaArr.map((item, i) => (
           <SwiperSlide>

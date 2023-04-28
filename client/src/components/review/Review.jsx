@@ -14,6 +14,7 @@ import reviewApi from "../../api/modules/review.api";
 import Avatar from "../../assets/user.webp";
 import LoadingButton from "../../components/loading-btn/LoadingButton";
 import "./review.scss";
+import CategoryTitle from "../category-title/CategoryTitle";
 const ReviewItem = ({ review, onRemoved }) => {
   const { user } = useSelector((state) => state.user);
 
@@ -30,19 +31,8 @@ const ReviewItem = ({ review, onRemoved }) => {
   };
 
   return (
-    // <Box
-    //   sx={{
-    //     padding: 2,
-    //     borderRadius: "5px",
-    //     position: "relative",
-    //     opacity: onRequest ? 0.6 : 1,
-    //     "&:hover": { backgroundColor: "background.paper" },
-    //   }}>
     <div className="item" direction="row" spacing={2}>
-      {/* avatar */}
-      {/* <TextAvatar text={review.user.displayName} /> */}
       <img src={Avatar} alt="" />
-      {/* avatar */}
       <div className="item__content" spacing={2} flexGrow={1}>
         <div spacing={1}>
           <h3 className="user-name">{review.user.displayName}</h3>
@@ -137,7 +127,7 @@ const Review = ({ reviews, media, mediaType }) => {
 
   return (
     <div className="review">
-      <h3 className="title">{`Reviews (${reviewCount})`}</h3>
+      <CategoryTitle text={`Reviews (${reviewCount})`} />
       <div className="review__content">
         {filteredReviews.map((item) => (
           <ReviewItem review={item} onRemoved={onRemoved} />

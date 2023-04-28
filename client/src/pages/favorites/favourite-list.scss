@@ -28,29 +28,6 @@
             padding-right: 10px;
         }
 
-        .title {
-            font-weight: 700;
-            font-size: 36px;
-            margin-bottom: 25px;
-            text-transform: capitalize;
-            // margin-left: 20px;
-            &::before {
-                content: "";
-                display: inline-block;
-                height: 50px;
-                width: 8px;
-                background: linear-gradient(
-                    180deg,
-                    var(--heading_custom_border_color_1, #f80),
-                    var(--heading_custom_border_color_2, #ea3c2a)
-                );
-                border-radius: 1rem;
-                top: 50%;
-                transform: translateY(25%);
-                left: 0;
-                margin-right: 15px;
-            }
-        }
         .movie-grid {
             display: flex;
             margin-left: auto;

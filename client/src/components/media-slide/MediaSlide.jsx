@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import tmdbConfigs from "../../api/configs/tmdb.configs";
 import { routesGen } from "../../routes/routes";
 import NavigationSwiper from "../navigation-swiper/NavigationSwiper";
+import CategoryTitle from "../category-title/CategoryTitle";
 const VideoItem = ({ video }) => {
   const iframeRef = useRef();
 
@@ -31,7 +32,7 @@ const VideoItem = ({ video }) => {
 const VideoSlide = ({ mediaArr }) => {
   return (
     <div className="video-slide">
-      <h3 className="video-slide__title">Trailers</h3>
+      <CategoryTitle text="Trailers" />
       <NavigationSwiper>
         {[...mediaArr].map((video, i) => (
           <SwiperSlide>
@@ -46,7 +47,7 @@ const VideoSlide = ({ mediaArr }) => {
 const BackdropSlide = ({ mediaArr }) => {
   return (
     <div className="backdrop-slide">
-      <h3 className="backdrop-slide__title">Backdrops</h3>
+      <CategoryTitle text="Backdrops" />
       <NavigationSwiper>
         {[...mediaArr].splice(0, 10).map((item, i) => (
           <SwiperSlide>
@@ -70,7 +71,7 @@ const BackdropSlide = ({ mediaArr }) => {
 const PosterSlide = ({ mediaArr }) => {
   return (
     <div className="poster-slide">
-      <h3 className="poster-slide__title">Posters</h3>
+      <CategoryTitle text="Posters" />
       <AutoSwiper>
         {[...mediaArr].splice(0, 10).map((item, i) => (
           <SwiperSlide>

@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 import { setGlobalLoading } from "../../redux/features/globalLoadingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-let timer;
-const timeout = 500;
+// let timer;
+// const timeout = 500;
 const Search = () => {
   const inputEl = useRef(null);
   const navigate = useNavigate();

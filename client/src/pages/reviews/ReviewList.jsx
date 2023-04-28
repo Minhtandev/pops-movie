@@ -24,6 +24,7 @@ import tmdbConfigs from "../../api/configs/tmdb.configs";
 import uiConfigs from "../../configs/ui.configs";
 import { routesGen } from "../../routes/routes";
 import dayjs from "dayjs";
+import CategoryTitle from "../../components/category-title/CategoryTitle";
 
 const ReviewItem = ({ review, onRemoved }) => {
   const [onRequest, setOnRequest] = useState(false);
@@ -123,7 +124,7 @@ const ReviewList = () => {
 
   return (
     <div className="review-list">
-      <h2 className="title">{`Your reviews (${count})`}</h2>
+      <CategoryTitle text={`Your reviews (${count})`} />
       <div spacing={2}>
         {filteredReviews.map((item) => (
           <>
