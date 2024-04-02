@@ -51,6 +51,8 @@ const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
     getGenres();
   }, [mediaType, mediaCategory, dispatch]);
 
+  console.log("movies", movies)
+
   return (
     <div className="hero-slide">
       <Swiper
@@ -79,7 +81,7 @@ const HeroSlide = ({ mediaType = "movie", mediaCategory = "popular" }) => {
                   {item.title || item.name}
                 </h4>
                 <div className="hero-slide__content__tags">
-                  <CircularRate rating={item.vote_average * 10} />
+                  <CircularRate rating={Number(item?.vote_average).toFixed(1) * 10 || 95}/>
                   {[...item.genre_ids].splice(0, 2).map((genreId, index) => (
                     <Tag
                       tagName={
