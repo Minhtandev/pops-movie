@@ -131,7 +131,7 @@ const MediaDetail = () => {
             <h4 className="title">{media.title || media.name}</h4>
             <div className="tags">
               <CircularRate
-                rating={Number(media.vote_average).toFixed(1) * 10}
+                rating={Number(media.vote_average).toFixed(1) * 10 || 95}
               />
               {media.genres &&
                 [...media.genres]
